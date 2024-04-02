@@ -25,6 +25,7 @@ class ViewController: UIViewController {
             contenedor.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             contenedor.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
+
         
         addButtonView()
     }
@@ -57,9 +58,11 @@ class ViewController: UIViewController {
         let digito = btn.title(for: .normal)
         
         if (digito == "=" && label.text != ""){
-            
-            let resultado = Calculos.getOperation(label.text!)
-            label.text = "\(resultado)"
+            if(label.text!.count > 1){
+                let resultado = Calculos.getOperation(label.text!)
+                label.text = "\(resultado)"
+            }
+           
             
         }else{
             
