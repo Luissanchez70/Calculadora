@@ -23,7 +23,9 @@ class ViewController: UIViewController {
         contenedor.spacing = 10
         NSLayoutConstraint.activate([
             contenedor.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            contenedor.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            contenedor.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
 
         
