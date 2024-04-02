@@ -10,70 +10,79 @@ import UIKit
 class ViewController: UIViewController {
 
    
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var contenedor: UIStackView!
-    private let botonesTags: [String] = ["1","2","3","4","5","6","7","8","9","0","+","-","*","/"]
+    
+    private let botonesTags: [String] = ["1","2","3"," + ","4","5","6"," - ","7","8","9"," * ","0","."," / ","="]
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        let btn = makeButton("R")
+      
         contenedor.backgroundColor = .blue
+        contenedor.spacing = 10
         NSLayoutConstraint.activate([
             contenedor.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             contenedor.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
-        view.addSubview(btn)
         
         addButtonView()
     }
 
  
     private func addButtonView(){
-        var count = 4
-        var fila: UIStackView = makeRow()
+        var count = 5
+        var fila: UIStackView = ComponentesUI.makeRow()
         
         for tag in botonesTags {
-            
-            if (count == 4){
-                print(" ")
+            if (count == 5){
                 contenedor.addArrangedSubview(fila)
-                fila = makeRow()
-               
+                fila = ComponentesUI.makeRow()
                 count = 1
             }
             
-            print(tag, terminator: " ")
-            let auxButton = makeButton(tag)
+            let auxButton = ComponentesUI.makeButton(tag)
+            auxButton.addTarget(self, action: #selector(selectorBtn), for: .touchUpInside)
+
             fila.addArrangedSubview(auxButton)
             count += 1
         
         }
-        
+        contenedor.addArrangedSubview(fila)
+    
     }
     
-    private func makeRow() -> UIStackView{
-        
+    @objc func selectorBtn(_ btn: AnyObject){
        
-        let fila = UIStackView()
-        fila.axis = .horizontal
-        fila.alignment = .fill
-        fila.distribution = .fillEqually
-        fila.spacing = 10
-        fila.backgroundColor = .cyan
+        let digito = btn.title(for: .normal)
         
-        return fila
-    }
-    
-    private func makeButton(_ tagBtn : String) -> UIButton {
+        if (digito == "=" && label.text != ""){
+            
+            let resultado = Calculos.getOperation(label.text!)
+            label.text = "\(resultado)"
+            
+        }else{
+            
+            var operacion_existente = label.text ?? ""
+             
+            if (operacion_existente.count > 0){
+                
+                if(operacion_existente.last == " " && digito!.contains(" ")){
+                    print("Signo ya insertado ")
+                }else{
+                    operacion_existente += btn.title(for: .normal)!
+                    label.text = operacion_existente
+                }
+            }else{
+                operacion_existente += btn.title(for: .normal)!
+                label.text = operacion_existente
+            }
+            
+            
+          
+        }
         
-        let button = UIButton(type: .custom)
-        button.setTitle(tagBtn, for: .normal)
-        button.backgroundColor = .lightGray
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 35
-       
         
-        return button
     }
 }
 

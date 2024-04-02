@@ -16,6 +16,8 @@
 		D2734E182BBC029D00FE1E8E /* CalculadoraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2734E172BBC029D00FE1E8E /* CalculadoraTests.swift */; };
 		D2734E222BBC029D00FE1E8E /* CalculadoraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2734E212BBC029D00FE1E8E /* CalculadoraUITests.swift */; };
 		D2734E242BBC029D00FE1E8E /* CalculadoraUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2734E232BBC029D00FE1E8E /* CalculadoraUITestsLaunchTests.swift */; };
+		D2734E352BBC39EA00FE1E8E /* ComponentesUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2734E342BBC39EA00FE1E8E /* ComponentesUI.swift */; };
+		D2734E372BBC3A6200FE1E8E /* Calculos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2734E362BBC3A6200FE1E8E /* Calculos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		D2734E1D2BBC029D00FE1E8E /* CalculadoraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculadoraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2734E212BBC029D00FE1E8E /* CalculadoraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadoraUITests.swift; sourceTree = "<group>"; };
 		D2734E232BBC029D00FE1E8E /* CalculadoraUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadoraUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2734E342BBC39EA00FE1E8E /* ComponentesUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentesUI.swift; sourceTree = "<group>"; };
+		D2734E362BBC3A6200FE1E8E /* Calculos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				D2734E002BBC029B00FE1E8E /* AppDelegate.swift */,
 				D2734E022BBC029B00FE1E8E /* SceneDelegate.swift */,
 				D2734E042BBC029B00FE1E8E /* ViewController.swift */,
+				D2734E362BBC3A6200FE1E8E /* Calculos.swift */,
+				D2734E342BBC39EA00FE1E8E /* ComponentesUI.swift */,
 				D2734E062BBC029B00FE1E8E /* Main.storyboard */,
 				D2734E092BBC029C00FE1E8E /* Assets.xcassets */,
 				D2734E0B2BBC029C00FE1E8E /* LaunchScreen.storyboard */,
@@ -261,6 +267,8 @@
 				D2734E052BBC029B00FE1E8E /* ViewController.swift in Sources */,
 				D2734E012BBC029B00FE1E8E /* AppDelegate.swift in Sources */,
 				D2734E032BBC029B00FE1E8E /* SceneDelegate.swift in Sources */,
+				D2734E352BBC39EA00FE1E8E /* ComponentesUI.swift in Sources */,
+				D2734E372BBC3A6200FE1E8E /* Calculos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
