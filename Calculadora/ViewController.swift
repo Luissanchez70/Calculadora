@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var contenedor: UIStackView!
     
-    private let botonesTags: [String] = ["1","2","3"," + ","4","5","6"," - ","7","8","9"," * ","0","."," / ","="]
+    private let botonesTags: [String] = ["1","2","3","AC","4","5","6"," - ","7","8","9"," * ","0","."," / "," + ","="]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,10 @@ class ViewController: UIViewController {
             }
             
             let auxButton = ComponentesUI.makeButton(tag)
+            if(tag == "="){
+                auxButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
+                auxButton.layer.cornerRadius = 30
+            }
             auxButton.addTarget(self, action: #selector(selectorBtn), for: .touchUpInside)
 
             fila.addArrangedSubview(auxButton)
@@ -63,6 +67,9 @@ class ViewController: UIViewController {
                 label.text = "\(resultado)"
             }
            
+            
+        }else if (digito == "AC"){
+            label.text = ""
             
         }else{
             
