@@ -9,7 +9,7 @@ import Foundation
 
 class Calculos{
     
-    private static let operaciones: [String] = ["/","*","-","+"]
+    private static let operaciones: [String] = ["/","X","-","+"]
     
     static func getOperation(_ operacion: String) -> Double{
         
@@ -46,7 +46,7 @@ class Calculos{
         switch signo {
             case "/":
                 resultado = num1 / num2
-            case "*":
+            case "X":
                 resultado = num1 * num2
             case "-":
             resultado = num1 - num2
