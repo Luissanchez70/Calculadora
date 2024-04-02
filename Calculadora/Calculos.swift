@@ -28,10 +28,8 @@ class Calculos{
                     array_digitos[i] = " "
                     array_digitos[i-1] = " "
                     array_digitos[i+1] = "\(restultado)"
-                    
                 }
             }
-            
             array_digitos = array_digitos.filter{ !$0.contains(" ")}
           
         }
