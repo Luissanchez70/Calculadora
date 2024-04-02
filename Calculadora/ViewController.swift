@@ -13,21 +13,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var contenedor: UIStackView!
     
-    private let botonesTags: [String] = ["1","2","3","AC","4","5","6"," - ","7","8","9"," * ","0","."," / "," + ","="]
+    private let botonesTags: [String] = ["1","2","3","AC","4","5","6"," - ","7","8","9"," X ","0","."," / "," + ","="]
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-      
-        contenedor.backgroundColor = .blue
+        
+        configurarVista()
+        
+    }
+    
+    private func configurarVista(){
+        view.backgroundColor = .black
+        
         contenedor.spacing = 10
+        
         NSLayoutConstraint.activate([
             contenedor.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             contenedor.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-
         
         addButtonView()
     }

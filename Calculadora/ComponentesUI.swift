@@ -10,11 +10,18 @@ import UIKit
 
 class ComponentesUI{
     
+    private static let signos: String = " / X + - = AC"
+    
     static func makeButton(_ tagBtn : String) -> UIButton {
         
         let button = UIButton(type: .custom)
         button.setTitle(tagBtn, for: .normal)
-        button.backgroundColor = .lightGray
+        
+        if (signos.contains(tagBtn)){
+            button.backgroundColor = .orange
+        }else{
+            button.backgroundColor = .lightGray
+        }
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 40
         NSLayoutConstraint.activate([
@@ -30,7 +37,6 @@ class ComponentesUI{
         let fila = UIStackView()
         fila.axis = .horizontal
         fila.distribution = .fillEqually
-        fila.backgroundColor = .cyan
         fila.spacing = 10
         return fila
     }
