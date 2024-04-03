@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
     
     private func configurarVista(){
-        view.backgroundColor = .black
+        view.backgroundColor = .red
         
         contenedor.spacing = 10
         
